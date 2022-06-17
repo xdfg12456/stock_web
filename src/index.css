@@ -1,13 +1,125 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
+
+.menu_block{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  background-color: black;
+  width: calc(100% - 78px);
+  left: 240px;
+  z-index: 99;
+  transition: all 0.1s ease;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(98vh - 50px);
+  top: 1vh;
+  width: calc(98% - 78px);
+  left: calc(1% + 78px);
+  border: 4px solid steelblue;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  width: calc(100% - 78px);
+  left: 78px;
+  height: 50px;
+  background-color: #121214;
+}
+
+.header .user_info{
+  position: relative;
+  color: #fff;
+  left: 85%;
+  top: 25%;
+}
+
+.header .logo_analyze{
+  position: relative;
+  color: #fff;
+  font-size: 45px;
+  left: 5vh;
+}
+
+.header .stock_analyze{
+  position: absolute;
+  color: #fff;
+  font-size: 25px;
+  left: 15vh;
+  bottom: 1vh;
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101d;
+  padding: 6px 14px;
+  transition: all 0.2s ease;
+  z-index: 99;
+}
+
+.sidebar.active{
+  transition: all 0.2s ease;
+  width: 240px;
+  z-index: 99;
+}
+
+.sidebar .logo_content .logo_name{
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.sidebar.active .logo_content .logo_name{
+  opacity: 1;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar .logo_content .menu{
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 6px;
+  font-size: 20px;
+  height: 43px;
+  width: 43px;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 12px;
+  transform: translateX(-50%); 
+  transition: all 0.5s ease;
+}
+
+.sidebar .logo_content .menu:hover{ 
+  background: #fff;
+  color: #11101d;
+}
+
+.sidebar.active .menu{
+  left: 90%;
+  transition: all 0.5s ease;
+} 

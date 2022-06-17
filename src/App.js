@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./componets/Header";
+import SideBar from "./componets/SideBar";
+import StockData from "./componets/StockData";
+import { useState } from "react";
+//import { useState } from "react";
 
 function App() {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div
+        className="menu_block"
+        style={{ opacity: click ? "0.6" : "0" }}
+      ></div>
+      <Header />
+      <SideBar click={click} handleClick={handleClick} />
+      <StockData />
     </div>
   );
 }
